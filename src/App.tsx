@@ -6,7 +6,7 @@ function App() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     console.log("===value");
     const value = e.target.value;
     setEmail(value);
@@ -20,7 +20,7 @@ function App() {
     }
   };
 
-  const passwordChange = (e) => {
+  const passwordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     console.log("===PassValue");
     const PassValue = e.target.value;
     setPassword(PassValue);
@@ -31,16 +31,17 @@ function App() {
       setError("Invalid password");
     } else {
       setError("");
-    } 
+    }
   };
+
   const handleSubmit = () => {
-  if (email && password && !error) {
-    alert("Login Successful");
-  }else{
-    alert("Plase Enter Your Valid Fields")
-  }
-};
-  
+    if (email && password && !error) {
+      alert("Login Successful");
+    }else{
+      alert("Plaese Enter Your Valid Fields")
+    }
+  };
+
   return (
     <div className="container">
       <h2 className="title">Login Form</h2>
@@ -62,12 +63,12 @@ function App() {
       />
 
       {error && <p className="error">{error}</p>}
-      <button onClick={handleSubmit}>submit</button>
+
+      <button onClick={handleSubmit}>Submit</button>
     </div>
   );
 }
 
-
-
 export default App;
+
 

@@ -31,9 +31,16 @@ function App() {
       setError("Invalid password");
     } else {
       setError("");
-    }
+    } 
+  };
+  const handleSubmit = () => {
+  if (email && password && !error) {
+    alert("Login Successful");
+  }else{
+    alert("Plase Enter Your Valid Fields")
+  }
+};
   
-
   return (
     <div className="container">
       <h2 className="title">Login Form</h2>
@@ -55,11 +62,12 @@ function App() {
       />
 
       {error && <p className="error">{error}</p>}
-      <button>submit</button>
+      <button onClick={handleSubmit}>submit</button>
     </div>
   );
 }
-}
+
+
 
 export default App;
 
